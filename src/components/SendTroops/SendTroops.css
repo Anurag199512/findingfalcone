@@ -1,0 +1,20 @@
+.search-title {
+  margin: 1em;
+  font-size: x-large;
+  text-align: center;
+}
+
+.button-group {
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.select {
+  margin-bottom: 1em;
+  margin-left: 2em;
+}
+
+.button {
+  padding: 1em;
+  margin: 0 1em;
+}

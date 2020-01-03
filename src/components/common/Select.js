@@ -1,12 +1,34 @@
 import React from 'react';
+import shortid from 'shortid';
 
-const Select = ({ options }) => {
+const Select = ({ styles, name, options, onSelect }) => {
+  if (options.length && options[0].name && options[0].name !== "Select") {
+    options.unshift({ name: "Select", distance: 0 });
+  }
+
   return (
-    <select>
-      {options.map((option, idx) => {
-        return <option key={idx} value={option.distance}>{option.name}</option>
-      })}
-    </select>
+    <>
+      {
+        options.length
+          ?
+          <select
+            name={name}
+            onChange={onSelect}
+            className={styles}
+          >
+            {options.map((option) => (
+              <option
+                key={shortid.generate()}
+                value={option.name}
+              >
+                {option.name}
+              </option>
+            )
+            )}
+          </select>
+          : null
+      }
+    </>
   )
 };
 
